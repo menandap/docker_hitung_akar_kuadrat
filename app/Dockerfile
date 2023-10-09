@@ -11,10 +11,10 @@ COPY . /app
 RUN pip install -r requirements.txt
 
 # Define environment variable for the database connection
-ENV DB_HOST=<your_sql_server_host>
-ENV DB_USER=<your_sql_server_user>
-ENV DB_PASSWORD=<your_sql_server_password>
-ENV DB_NAME=<your_database_name>
+ENV DB_HOST=35.222.94.16
+ENV DB_USER=root
+ENV DB_PASSWORD=password
+ENV DB_NAME=db-square-root
 
 # Make port 80 available to the world outside this container
 EXPOSE 80
