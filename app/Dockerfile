@@ -1,23 +1,15 @@
-# Use an official Python runtime as a parent image
+# Use an official Python runtime as an image
 FROM python:3.8-slim-buster
 
-# Set the working directory to /app
+# Sets the working directory for following COPY and CMD instructions
+# Notice we haven’t created a directory by this name - this instruction
+# creates a directory with this name if it doesn’t exist
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
 
-# Install any needed packages specified in requirements.txt
-RUN pip install -r requirements.txt
-
-# Define environment variable for the database connection
-ENV DB_HOST=35.222.94.16
-ENV DB_USER=root
-ENV DB_PASSWORD=password
-ENV DB_NAME=db-square-root
-
-# Make port 80 available to the world outside this container
-EXPOSE 80
+COPY . .
 
 # Run app.py when the container launches
-CMD ["python", "app.py"]
+CMD ["python3", "app.py"]

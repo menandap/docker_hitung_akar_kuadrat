@@ -1,3 +1,4 @@
+import sys
 import pymysql
 import dbm
 from flask import Flask, render_template, request, jsonify
@@ -8,8 +9,6 @@ import hashlib
 # Membuat server Flask
 app = Flask(__name__)
 
-
-# Koneksi ke database MySQL
 db = pymysql.connect(
 	host="35.222.94.16",
 	user="root",
