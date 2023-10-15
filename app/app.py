@@ -10,7 +10,7 @@ import hashlib
 app = Flask(__name__)
 
 db = pymysql.connect(
-	host="35.222.94.16",
+	host="34.83.180.44",
 	user="root",
 	password="password",
 	database="db-square-root"
